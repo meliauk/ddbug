@@ -1,0 +1,13 @@
+.markdown-section code {
+    background-color: #f3f4f4;
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+	color: #ff0000;
+}
+.code-wrapper pre code{
+	color: #333;
+}
+
+.gitbook-link {
+    display: none !important;
+}

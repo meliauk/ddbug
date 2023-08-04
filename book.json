@@ -1,0 +1,76 @@
+{
+  "title": "粥可温-Bug",
+  "description": "这真的不是我的问题啊~~~",
+  "language": "zh-hans",
+  "plugins": [
+	  "accordion",
+	  "lightbox",
+	  "-lunr", 
+	  "theme-default",
+      "theme-comscore",
+	  "-search",
+	  "livereload",
+	  "highlight",
+	  "search-pro",
+	  "back-to-top-button",
+	  "splitter",
+	  "hide-element",
+	  "code",
+	  "insert-logo",
+	  "tbfed-pagefooter",
+	  "expandable-chapters",
+	  "chapter-fold",
+	  "-sharing", 
+	  "sharing-plus",
+	  "page-toc-button",
+	  "favicon-absolute"
+  ], 
+  "pluginsConfig":{
+	"favicon-absolute":{
+		"favicon": "config/img/book.png",
+		"bookmark": "config/img/book.png",
+		"appleTouchIcon152": "config/img/book.png",
+		"appleTouchIconPrecomposed152": "config/img/book.png",
+		"appleTouchIconMore": {
+			"120x120": "config/img/book.png",
+			"180x180": "config/img/book.png"
+		},
+		"appleTouchIconPrecomposedMore": {
+			"120x120": "config/img/book.png",
+			"180x180": "config/img/book.png"
+		}
+	},
+   "page-toc-button": {
+		"maxTocDepth": 2,
+		"minTocSize": 2
+    },
+	"links" : {
+		"sidebar" : {
+			"Home" : "https://github.com/dunwu/gitbook-notes"
+		}
+	},
+	"hide-element": {
+		"elements": [".gitbook-link"]
+	 },
+	"insert-logo": {
+		"url": "https://portrait.gitee.com/uploads/avatars/user/1617/4852612_MEliauk_1615280065.png!avatar60",
+		"style": "background: none; max-height: 50px; min-height: 50px;border-radius: 50%;"
+	},
+	"tbfed-pagefooter": {
+		"copyright":"Copyright &copy 无人问我粥可温",
+		"modify_label": "该文章修订时间：",
+		"modify_format": "YYYY-MM-DD HH:mm:ss"
+	},
+	"sharing": {
+		 "qq": true,
+		 "qzone": true,
+		 "weibo": true,
+	  "all": [
+		   "weibo","qq", "qzone"
+	   ]
+   },
+   "styles":{
+	"website": "config/styles/website.css"
+   }
+  }
+}
