@@ -1,17 +1,18 @@
 name: 推送gitee并page
 on: [push]
 jobs:
-#  get-gitee-code:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: Mirror the Github organization repos to Gitee.
-#      uses: Yikun/hub-mirror-action@master
-#      with:
-#        src: github/kunpengcompute
-#        dst: gitee/kunpengcompute
-#        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-#        dst_token: ${{ secrets.GITEE_TOKEN }}
-#        account_type: org
+  get-gitee-code:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync to Gitee
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: gitee/MEliauk
+        dst: github/meliauk
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITBUB_TOKEN }}
+        static_list: "ddbug"
+        
   build-and-push:
     permissions:
         contents: write
