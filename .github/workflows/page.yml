@@ -61,14 +61,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Sync to Gitee
-      uses: wearerequired/git-mirror-action@master
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.GITBOOK_RSA_PRIVATE_KEY }}
+      uses: Yikun/hub-mirror-action@master
       with:
-        # 来源仓库
-        source-repo: git@github.com:meliauk/ddbug.git
-        # 目标仓库
-        destination-repo: git@gitee.com:MEliauk/ddbug.git
+        src: github/meliauk
+        dst: gitee/MEliauk
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        static_list: "ddbug"
   reload-pages:
     needs: sync
     runs-on: ubuntu-latest
