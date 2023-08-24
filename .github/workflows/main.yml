@@ -22,10 +22,9 @@ jobs:
       uses: actions/setup-node@v1 # 作用：安装nodejs
       with:
         node-version: 10.14.1
-        
-    
+
     - name: Install
-      run: npm install
+      run: npm install gitbook-cli
 
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
