@@ -1,17 +1,17 @@
 name: 推送gitee并page
 on: [push]
 jobs:
-  get-gitee-code:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Sync to Gitee
-      uses: Yikun/hub-mirror-action@master
-      with:
-        src: gitee/MEliauk
-        dst: github/meliauk
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITBUB_TOKEN }}
-        static_list: "ddbug"
+  # get-gitee-code:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Sync to Gitee
+  #     uses: Yikun/hub-mirror-action@master
+  #     with:
+  #       src: gitee/MEliauk
+  #       dst: github/meliauk
+  #       dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+  #       dst_token: ${{ secrets.GITBUB_TOKEN }}
+  #       static_list: "ddbug"
         
   build-and-push:
     permissions:
