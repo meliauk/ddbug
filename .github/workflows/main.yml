@@ -23,13 +23,13 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         # 你要操作的目标仓库
-        TARGET_REPO: china-fanxin/vuepress-blog
+        TARGET_REPO: meliauk/ddbug
         # 构建结果存储的分支
         TARGET_BRANCH: pages
         # 要使用的构建命令
-        BUILD_SCRIPT: yarn && yarn build
+        BUILD_SCRIPT: gitbook build
         # 构建结果存储目录
-        BUILD_DIR: docs/.vuepress/dist/
+        BUILD_DIR: _book 
   sync:
     needs: build-and-deploy
     runs-on: ubuntu-latest
