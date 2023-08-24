@@ -27,7 +27,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       
-    - name: Use Node@10.x # 步骤2
+    - name: Use Node@10.14.1 # 步骤2
       uses: actions/setup-node@v1 # 作用：安装nodejs
       with:
         node-version: 10.14.1
