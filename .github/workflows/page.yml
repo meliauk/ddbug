@@ -41,14 +41,9 @@ jobs:
     - name: gitbook build
       run: gitbook build 
 
-    - name: Configure Git informations
-      run: |
-        git config --global user.name $GITHUB_ACTOR
-        git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
       
-    # Install dependencies for build process
-    - name: push
-      run: |
-        git add .
-        git commit -m "actions commit"
-        git push origin master
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        branch: master
