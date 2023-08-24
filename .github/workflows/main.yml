@@ -17,6 +17,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+      
+    - name: Use Node@14.x # 步骤2
+      uses: actions/setup-node@v1 # 作用：安装nodejs
+      with:
+        node-version: 10.14.1
+        
+    
+    - name: Install
+      run: npm install
 
     - name: Build and Deploy
       uses: jenkey2011/vuepress-deploy@master
