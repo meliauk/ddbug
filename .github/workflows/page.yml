@@ -41,6 +41,12 @@ jobs:
     - name: gitbook build
       run: gitbook build 
 
+    - name: Commit
+      run: |
+        git config --global user.email 2050781802@qq.com
+        git config --global user.name meliauk
+        git add .
+        git commit -m"action:`date`"
       
     - name: Push changes
       uses: ad-m/github-push-action@master
