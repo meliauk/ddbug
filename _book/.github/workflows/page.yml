@@ -1,4 +1,4 @@
-name: Github TO Gitee:master
+name: 推送gitee并page
 on: [push]
 jobs:
 #  get-gitee-code:
@@ -66,9 +66,9 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.GITBOOK_RSA_PRIVATE_KEY }}
       with:
         # 来源仓库
-        source-repo: "git@github.com:meliauk/ddbug.git"
+        source-repo: git@github.com:meliauk/ddbug.git
         # 目标仓库
-        destination-repo: "git@gitee.com:MEliauk/ddbug.git"
+        destination-repo: git@gitee.com:MEliauk/ddbug.git
   reload-pages:
     needs: sync
     runs-on: ubuntu-latest
