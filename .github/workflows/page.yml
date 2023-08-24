@@ -56,7 +56,7 @@ jobs:
         git config --global user.name meliauk
         git add .
         git commit -m"action:`date`"
-        git push
+        git push -f origin master
   sync:
     needs: build-and-push
     runs-on: ubuntu-latest
