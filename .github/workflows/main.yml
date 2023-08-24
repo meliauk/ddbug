@@ -35,13 +35,20 @@ jobs:
     - name: Install gitbook-plugin-lightbox
       run: npm install gitbook-plugin-lightbox
 
-    - name: gitbook Install
+    - name: gitbook install
       run: gitbook install 
+
+    - name: gitbook build
+      run: gitbook build 
+
+    - name: Configure Git informations
+      run: |
+        git config --global user.name $GITHUB_ACTOR
+        git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
       
     # Install dependencies for build process
-    - name: Install build dependencies
+    - name: push
       run: |
-        gitbook build
         git add .
         git commit -m "actions commit"
         git push origin master
