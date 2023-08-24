@@ -1,4 +1,4 @@
-name: 推送gitee并page
+name: 同步到gitee并page
 on: [push]
 jobs:
   # get-gitee-code:
