@@ -27,7 +27,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       
-    - name: Use Node@10.x # 步骤2
+    - name: Use Node@10.14.1 # 步骤2
       uses: actions/setup-node@v1 # 作用：安装nodejs
       with:
         node-version: 10.14.1
@@ -56,7 +56,7 @@ jobs:
         git config --global user.name meliauk
         git add .
         git commit -m"action:`date`"
-        git push
+        git push -f origin master
   sync:
     needs: build-and-push
     runs-on: ubuntu-latest

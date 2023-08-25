@@ -102,7 +102,3 @@ SELECT * FROM pay_refund ORDER BY REFUND_NO  DESC;
 
 ```
 
-```json
-{"ip":"192.168.3.25","port":"22","username":"sftp","pwd":"wft@test","path":"/data/sftp/wftsftp/acctest/test/","processChain":"ABDEF"}
-```
-
