@@ -3,15 +3,15 @@
   "description": "这真的不是我的问题啊~~~",
   "language": "zh-hans",
   "plugins": [
+	  "-lunr",
+	  "-search",
+	  "search-pro",
 	  "accordion",
 	  "lightbox",
-	  "-lunr", 
 	  "theme-default",
-      "theme-comscore",
-	  "-search",
+	  "theme-comscore",
 	  "livereload",
 	  "highlight",
-	  "search-pro",
 	  "back-to-top-button",
 	  "splitter",
 	  "hide-element",
@@ -23,8 +23,9 @@
 	  "-sharing", 
 	  "sharing-plus",
 	  "page-toc-button",
-	  "favicon-absolute"
-  ], 
+	  "favicon-absolute",
+	  "flexible-alerts"
+  ],
   "pluginsConfig":{
 	"favicon-absolute":{
 		"favicon": "config/img/book.png",
@@ -58,7 +59,7 @@
 	},
 	"tbfed-pagefooter": {
 		"copyright":"Copyright &copy 无人问我粥可温",
-		"modify_label": "该文章修订时间：",
+		"modify_label": "最后更新时间：",
 		"modify_format": "YYYY-MM-DD HH:mm:ss"
 	},
 	"sharing": {
