@@ -31,7 +31,31 @@ public class WlmqFastPayCheckBillProcessor extends AbstractCheckBillProcessor {
 cn.swiftpass.core.server.acc.account.worker.CheckBillWorker#validate
 需改动
 如果第三方返回的有下载路径，这不需要验证，配置下载文件路径
+// 需要对账方式-任务没有配置下载文件路径
+if (payCenterDto.getApiProvider()!=API_PROVIDER_FAST_CARD ......) {
+    logger.error("第三方下载地址为空，请检查。任务id={}", task.getTaskId());
+    return false;
+}
+    
+如果第三方没用返回下载路径
+cn.swiftpass.core.server.acc.service.impl.CheckBillTaskServiceImpl#buildCheckBillTask
+修改 设置对账下载路径
+    
+/** 下载任务属性初始化 */
+// 设置对账下载路径
+if (AccConstants.API_PROVIDER_FAST == payCenterDto.getApiProvider()) {
+    String downloadMessage = payCenterDto.getDownLoadMessage();
+    Map downMsgMap = JSON.parseObject(downloadMessage, Map.class);
+    if (downMsgMap.containsKey("path")) {
+        checkBillTaskDto.setBillPath(downMsgMap.get("path").toString());
+    }else {
+        logger.error("快捷支付-对账信息 path 未配置");
+    }
+}   
+
 ```
+
+
 
 ### 3，逐笔对账
 
