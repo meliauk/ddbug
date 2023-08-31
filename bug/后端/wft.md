@@ -126,3 +126,11 @@ SELECT * FROM pay_refund ORDER BY REFUND_NO  DESC;
 
 ```
 
+
+
+打包顺序
+
+```
+transmit -> cle-bank -> cle -> acc    然后pravite-war做一次maven refers
+```
+
