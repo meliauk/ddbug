@@ -1,1 +1,1 @@
-cmd /k "cd /d %~dp0&&git add .&&git commit -m 'update'&&git push -f origin master"
+cmd /k "cd /d %~dp0&&git pull&&git add .&&git commit -m 'update'&&git push -f origin master"
