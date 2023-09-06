@@ -134,3 +134,24 @@ SELECT * FROM pay_refund ORDER BY REFUND_NO  DESC;
 transmit -> cle-bank -> cle -> acc    然后pravite-war做一次maven refers
 ```
 
+
+
+## not bean 问题
+
+```java
+1,需要在HessianConsumerConfiguration中注入
+
+@Bean("InterestsApiService")
+public InterestsApiService interestsApiService(){
+	return interestsApiService;
+}
+
+@HessianClient("interests")
+InterestsApiService interestsApiService;
+
+----------
+    
+2,在app-config.properties中配置
+hessian.interests.server=http://127.0.0.1:8001/sppay-cms-war
+```
+
