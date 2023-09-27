@@ -155,3 +155,29 @@ InterestsApiService interestsApiService;
 hessian.interests.server=http://127.0.0.1:8001/sppay-cms-war
 ```
 
+
+
+## Transmit 接口对接
+
+1，api.json 添加对应配置
+
+2，添加Constant常量，对应api.json中配置路径
+
+3，reqDto，respDto 编写
+
+4，WlmqForwardService编写
+
+5，行内接口测试，得到返回值
+
+6，添加数据到mock-data.json
+
+7，编写test案例测试
+
+
+
+打包发布镜像时要修改
+
+https://gitlab.swifer.co/fbu-public/service-configs/service-configs-test/-/tree/master/wlmq/sppay-transmit-service/test
+
+api.json配置
+

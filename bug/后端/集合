@@ -1,0 +1,93 @@
+# HashSet问题
+
+## **HashSet** 主要是比较 hash 值来进行去重
+
+所有对象集合去重该对象需要**重写Object**得 **HashCode**方法和**equals**方法
+
+```java
+@EqualsAndHashCode
+public class User{
+	public String name;
+	public String sex;
+}
+```
+
+```java
+List<User> lists = new ArrayList<>()
+lists.add(new User("小王","男"))
+lists.add(new User("小李","男"))
+lists.add(new User("小王","男"))
+
+// list添加到set中
+Set<User> set = new HashSet<>();
+set.addAll(lists);
+List<User> list2 = new ArrayList<>();
+list2.addAll(set);
+
+```
+
+@Data 注解默认包含了 EqualsAndHashCode
+```java
+Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode, Value
+```
+
+## List中sublist方法内存地址指向问题
+
+### SubList的使用
+List接口中有subList(int
+
+ fromIndex, int toIndex)方法 属于`浅拷贝`
+会对原List产生影响，所以要慎用。
+
+测试用例
+```java
+public static void main(String[] args) {
+        List list = new ArrayList();
+        for(int i = 0; i<10 ;i++){
+            list.add(i);
+        }
+        System.out.println("list->"+list);
+        List tempList = list.subList(0, 4);
+        System.out.println("tempList->"+tempList);
+
+        tempList.clear();
+        for(int i = 2; i<5 ;i++){
+            tempList.add(i);
+        }
+        System.out.println("tempList->"+tempList);
+        System.out.println("list->"+list);
+    }
+```
+```结果
+list->[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+tempList->[0, 1, 2, 3]
+tempList->[2, 3, 4]
+list->[2, 3, 4, 4, 5, 6, 7, 8, 9]
+
+```
+### SubList在使用中常遇到的问题
+- SubList不能被序列化
+- 对子SubList的增删导致原List的数据变化
+- 对原List的增删会导致子SubList的的操作抛出并发修改异常
+- 不能对SubList强制转型为原类型，比如LinkedList或者ArrayList，会抛出类转换异常
+
+
+### SubList截取的数据是指向了被截取集合的内存地址
+![](https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/02/22/kuangstudyf52f4784-852e-4c7a-afc6-5ecadfcc998f.png)
+
+
+**解决：进行拷贝。若有对象或引用类型则需进行深拷贝，否则可用浅拷贝**
+
+JSON.parse(JSON.stringify()) 实现对对象的深拷贝
+
+就是利用JSON.stringify 将对象序列化（JSON字符串），再使用JSON.parse来反序列化(还原)js对象；序列化的作用是存储
+
+```java
+List<Object>  list =  new ArrayList<>();
+List<Object> sublist = list.subList(0, 5);
+String arrJson = JSON.toJSONString(sublist);
+List<Object> tempList = JSON.parseArray(arrJson,T.class);
+```
+
+或参考
+https://gitee.com/MEliauk/javastudy/tree/master/src/main/java/com/yifan/clone
