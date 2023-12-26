@@ -8,7 +8,8 @@
   * [wft](bug/后端/wft.md)
   * [mybatisplus](bug/后端/Mybatisplus.md)
   * [数据库](bug/后端/数据库.md)
+  * [Git](bug/后端/git.md)
   * [集合](bug/后端/集合.md)
 
 - 其他
-  - [这到底是什么问题](bug/不明所以/1.md)
+  - [这到底是什么问题](bug/不明所以/其他.md)
