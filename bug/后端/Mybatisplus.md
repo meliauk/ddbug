@@ -26,7 +26,7 @@ SpringBoot 默认是单一数据源自动配置加载，所以禁止 SpringBoot 
 
 
 
-<img src="file:///C:/Users/yufan.wang/Documents/WXWork/1688858416491762/Cache/Image/2024-01/企业微信截图_17047184081357.png" alt="img" style="zoom: 50%;" />
+<img src="https://v0710.top/images/img/企业微信截图_17047184081357.png" alt="img" style="zoom: 50%;" />
 
 ```sql
 1，表建立了序列
