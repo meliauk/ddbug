@@ -5,6 +5,7 @@
   * [vue](bug/前端/vue/initVue.md)
   * [页面实时数据监听](bug/前端/vue/页面实时数据监听.md)
 * 后端
+  * [java](bug/后端/java.md)
   * [wft](bug/后端/wft.md)
   * [mybatisplus](bug/后端/Mybatisplus.md)
   * [数据库](bug/后端/数据库.md)
