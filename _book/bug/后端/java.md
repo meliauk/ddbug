@@ -39,3 +39,26 @@ java 8 date/time type `java.time.LocalDateTime` not supported by default: add Mo
 自定义key 加密
 ```
 
+
+
+问题
+
+RPC远程调用，@RequestParam接收参数，请求参数多大，调用会报错400
+
+原因
+
+```
+GET请求，HTTP规范对URL长度是没有限制的
+
+浏览器有不同得限制。
+
+简单可以理解为：Get请求，URL长度不要超过 2KB
+
+
+
+Post请求，也是没有长度限制的。限制它的是服务器的处理能力，与存储大小。
+
+还有就是Web容器的限制，比如Tomcat 默认是2MB。
+```
+
+ 
